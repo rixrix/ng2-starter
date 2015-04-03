@@ -19,15 +19,18 @@ var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var replace = require('gulp-replace');
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var _ = require('lodash');
 
 var appIndexHtmlFilename = 'index.html';
 var appProjectName = 'stencil';
 var compiledAngularTemplateCacheFilename = 'templates.js';
 var compiledCssFilename =  appProjectName + '.compiled.css';
 var compiledJsFilename = appProjectName + '.compiled.js';
-var appJsFilename = appProjectName + '.js';
 
-var expressServerPort = 3000;
+var webServerPort = 3000;
+var proxyServerPort = 3001;
 var isWatchAndRun = false;
 var isPackageRun = false;
 var isPackageRelease = false;
@@ -56,83 +59,50 @@ var sources = {
  * Local functions / Utilities
  **********************************************************************************************************************/
 
-function browserifier() {
-    return browserify(sources.build + '/' + appJsFilename, {
-        fullsources: false,
-        cache: {},
-        packageCache: {},
-        debug: true
-    });
-}
-
-function reload(event) {
-    setTimeout(function() {
-        livereload.changed();
-        util.log('[reloaded] ' + path.basename(event.path));
-    }, 2000);
-}
-
 gulp.task('clean', function() {
     return gulp.src([sources.build, sources.dist], {read: false})
     .pipe(clean());
 });
 
-gulp.task('start-livereload', function(){
-    livereload.listen();
-});
-
 gulp.task('start-server', function() {
     var server = express();
 
-    if (!isPackageRun) {
-        server.use(livereloadInjector());
-        server.use(express.static(sources.build));
-    } else {
-        server.use(express.static(sources.dist));
-    }
+    server.get('/', function(request, response) {
+        response.sendFile(path.join(__dirname, '/app','/index.html'));
+    })
+    .use(express.static(path.resolve(__dirname)))
+    .listen(proxyServerPort);
 
-    server.listen(expressServerPort);
-
-    util.log(util.colors.green(appProjectName + ' is listening on port ' + expressServerPort));
+    util.log('proxy server listening on port ' + proxyServerPort);
 });
 
-gulp.task('browserify', function(){
-    return browserifier()
-    .bundle()
-    .pipe(sourceStream(compiledJsFilename))
-    .pipe(gulp.dest(sources.build));
-});
+gulp.task('webpack-dev-server', function() {
+    var options = require('./webpack.config');
 
-gulp.task('watchify', function() {
+    options.entry = [];
+    options.entry.push('app/' + appProjectName + '.ts');
+    options.entry.push('webpack-dev-server/client?http://localhost:' + webServerPort, 'webpack/hot/dev-server');
+    options.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-    var browseritor = watchify(
-        browserifier()
-    );
+    var devServerOptions = {
+        hot: true,
+        watchDelay: 300,
+        stats: {
+            cached: false,
+            cachedAssets: false,
+            colors: true,
+            context: __dirname
+        },
+        proxy: {
+            '*': "http://localhost:" + proxyServerPort
+        }
+    };
 
-    browseritor.on('update', rebundle);
+    var webpackServer = new WebpackDevServer(webpack(options), devServerOptions);
 
-    function rebundle() {
-        return browseritor.bundle()
-        .on('error', util.log.bind(util, 'Browserify Error'))
-        .pipe(sourceStream(compiledJsFilename))
-        .pipe(gulp.dest(sources.build));
-    }
-
-    return rebundle();
-});
-
-gulp.task('minify-js', function() {
-    return gulp.src(path.join(sources.build, compiledJsFilename))
-    .pipe(uglify({
-        mangle: true
-    }))
-    .pipe(gulp.dest(path.join(sources.dist, '/')));
-});
-
-gulp.task('minify-css', function() {
-    return gulp.src(path.join(sources.build, compiledCssFilename))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(path.join(sources.dist, '/')));
+    webpackServer.listen(webServerPort, function () {
+        util.log("server started at http://localhost:" + webServerPort)
+    });
 });
 
 /***********************************************************************************************************************
@@ -186,32 +156,6 @@ gulp.task('compile-stylus', function() {
 });
 
 /***********************************************************************************************************************
- * Bulk Tasks
- **********************************************************************************************************************/
-
-gulp.task('watches', function() {
-
-    gulp.watch(sources.html, ['copy-index-html']);
-    gulp.watch(sources.stylus, ['compile-stylus']);
-    gulp.watch(sources.ts, ['compile-typescript']);
-    gulp.watch(sources.templates, ['compile-templates']);
-    gulp.watch(sources.assets, ['copy-assets']);
-
-    // post-build watcher(s)
-    gulp.watch([
-        path.join(sources.build, compiledJsFilename),
-        path.join(sources.build, appIndexHtmlFilename)
-    ], {
-        debounceDelay: 1000
-    })
-    .on('change', function(event) {
-        if (isWatchAndRun) {
-            reload(event);
-        }
-    });
-});
-
-/***********************************************************************************************************************
  * Common Tasks
  **********************************************************************************************************************/
 
@@ -224,21 +168,13 @@ gulp.task('build', function() {
             'compile-typescript',
             'compile-templates'
         ],
-        'compile-stylus',
-        'browserify'
+        'compile-stylus'
     );
 });
 
 gulp.task('run', function() {
     runSequence(
         'start-server'
-    );
-});
-
-gulp.task('watch', function() {
-    runSequence(
-        'watchify',
-        'watches'
     );
 });
 
@@ -254,9 +190,6 @@ gulp.task('watchrun', function() {
             'compile-templates'
         ],
         'compile-stylus',
-        'browserify',
-        'watches',
-        'watchify',
         'start-livereload',
         'run'
     );
@@ -285,6 +218,14 @@ gulp.task('releaserun', function() {
     runSequence(
         'release',
         'run'
+    );
+});
+
+gulp.task('webpack', function() {
+    runSequence(
+        'clean',
+        'run',
+        'webpack-dev-server'
     );
 });
 

@@ -1,5 +1,7 @@
 /// <reference path="../libs.d.ts" />
 
+require('./main-controller.styl');
+
 export class MainController {
     static $inject = ['$scope'];
 
@@ -7,5 +9,5 @@ export class MainController {
     }
 }
 
-angular.module('Main', [])
-.controller('MainController', MainController);
+import _module = require('angular-module');
+_module.controller('MainController', MainController);

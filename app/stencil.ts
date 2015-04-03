@@ -1,22 +1,11 @@
 /// <reference path="libs.d.ts" />
 
-'use strict'
-
-require('angular/angular');
-require('angular-route/angular-route');
-require('angular-sanitize/angular-sanitize');
-
-require('./templates');
+require('angular-module');
 require('./main/main-controller');
 
-var app = angular.module('Stencil', [
-    'ngRoute',
-    'ngSanitize',
-    'Templates',
-    'Main'
-]);
+import _module = require('angular-module');
 
-app.config(['$httpProvider', '$routeProvider', '$locationProvider',
+_module.config(['$httpProvider', '$routeProvider', '$locationProvider',
     function($httpProvider: ng.IHttpProvider,
              $routeProvider: ng.route.IRouteProvider,
              $locationProvider: ng.ILocationProvider)
@@ -24,7 +13,7 @@ app.config(['$httpProvider', '$routeProvider', '$locationProvider',
         $locationProvider.hashPrefix('!');
         $routeProvider
             .when('/', {
-                templateUrl: 'main/main-view.html',
+                template: <string>require('main/main-view.html'),
                 controller: 'MainController'
             })
             .otherwise({
