@@ -1,5 +1,7 @@
 # Webpack + GulpJS + AngularJS + TypeScript + Stylus
 
+> fork of [Stencil](https://github.com/rixrix/stencil) project 
+
 ## Stencil
 
 A horribly simple boilerplate for frontend development using some good WWW stuff today!
