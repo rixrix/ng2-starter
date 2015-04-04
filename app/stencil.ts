@@ -1,6 +1,8 @@
 /// <reference path="libs.d.ts" />
 
 require('angular-module');
+
+require('./styles/index.styl');
 require('./main/main-controller');
 
 import _module = require('angular-module');
