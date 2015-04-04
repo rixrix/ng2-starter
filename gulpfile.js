@@ -18,7 +18,7 @@ var webServerPort = 3000;
 var proxyServerPort = 3001;
 var isPackageRun = false;
 var isPackageRelease = false;
-var isExpressOnProxyServer = true;
+var isExpressOnProxyServer = false;
 
 var sources = {
     ts: 'app/**/*.ts',
@@ -142,14 +142,15 @@ gulp.task('build', function() {
 });
 
 gulp.task('run', function() {
-    isExpressOnProxyServer = false;
     runSequence(
         'start-server'
     );
 });
 
 gulp.task('watchrun', function() {
+    isExpressOnProxyServer = true;
     runSequence(
+        'run',
         'webpack-dev-server'
     );
 });
