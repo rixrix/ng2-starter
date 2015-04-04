@@ -48,12 +48,6 @@ Run only:
 $ gulp run
 ```
 
-Automatically build when a file changes:
-
-```
-$ gulp watch
-```
-
 Automatically build and run when a file changes:
 
 ```
