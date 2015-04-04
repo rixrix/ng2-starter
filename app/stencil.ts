@@ -15,7 +15,7 @@ _module.config(['$httpProvider', '$routeProvider', '$locationProvider',
         $locationProvider.hashPrefix('!');
         $routeProvider
             .when('/', {
-                template: <string>require('main/main-view.html'),
+                template: require('main/main-view.html'),
                 controller: 'MainController'
             })
             .otherwise({
