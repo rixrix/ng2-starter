@@ -16,7 +16,7 @@ A horribly simple boilerplate for frontend development using some good WWW stuff
 * Plus other stuff like:
 * - [DefinitelyTyped](http://definitelytyped.org/tsd/)
 
-## Install
+## Install npm dependencies
 
 Make sure you have NodeJS and Git, then
 
@@ -26,7 +26,7 @@ $ cd </path/to/stencil/cloned/folder>
 $ npm install
 ```
 
-## Usage
+## The Gulp command
 
 By default if you don't specify any parameter to Gulp it will invoke `watchrun` task
 
@@ -101,7 +101,6 @@ Issue a pull request https://github.com/rixrix/stencil/pulls
 
 ## Resources
 
-
 * Relational Folder Structure http://w2ui.com/web/blog/10/Folder-Structure-for-Single-Page-Applications
 * Gulp task names https://github.com/mrkev/generator-typescript
 
@@ -111,4 +110,4 @@ Issue a pull request https://github.com/rixrix/stencil/pulls
 
 ## License
 
-MIT
+Distributed under [MIT License](http://opensource.org/licenses/MIT)
