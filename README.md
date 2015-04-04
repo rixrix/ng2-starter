@@ -15,8 +15,8 @@ A horribly simple boilerplate for frontend development using some good WWW stuff
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](http://expressjs.com/)
 * [Stylus](http://learnboost.github.io/stylus/)
-* Plus other stuff like:
-* - [DefinitelyTyped](http://definitelytyped.org/tsd/)
+* [DefinitelyTyped](http://definitelytyped.org/tsd/)
+* [Bootstrap Stylus](https://www.npmjs.com/package/bootstrap-styl)
 
 ## Install npm dependencies
 
