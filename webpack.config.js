@@ -56,7 +56,10 @@ var options = {
             'angular': 'node_modules/angular/angular.min',
             'angular-route': 'node_modules/angular-route/angular-route.min',
             'angular-sanitize': 'node_modules/angular-sanitize/angular-sanitize.min',
-            'angular-module': 'app/angular-module'
+            /**
+             * Entry point for apps directives, services and etc
+             */
+            'app-module': 'app/app-module'
         },
         modulesDirectories: ['.', 'app', 'web_modules', 'node_modules']
     },

@@ -121,8 +121,10 @@ gulp.task('webpackify', function(callback) {
     };
 
     webpack(webpackOptions, function (err, stats) {
-        if (err) throw new gutil.PluginError("webpack", err);
-        callback();
+        if (err) {
+            throw new gutil.PluginError("webpack", err);
+            callback();
+        }
     });
 });
 

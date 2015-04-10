@@ -1,25 +1,25 @@
 /// <reference path="libs.d.ts" />
 
-require('angular-module');
+require('app-module');
 
 require('./styles/index.styl');
 require('./main/main-controller');
 
-import _module = require('angular-module');
+import _appModule = require('app-module');
 
-_module.config(['$httpProvider', '$routeProvider', '$locationProvider',
+_appModule.config(['$httpProvider', '$routeProvider', '$locationProvider',
     function($httpProvider: ng.IHttpProvider,
              $routeProvider: ng.route.IRouteProvider,
              $locationProvider: ng.ILocationProvider)
     {
         $locationProvider.hashPrefix('!');
         $routeProvider
-            .when('/', {
-                template: require('main/main-view.html'),
-                controller: 'MainController'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });
+        .when('/', {
+            template: require('main/main-view.html'),
+            controller: 'MainController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
     }
 ]);

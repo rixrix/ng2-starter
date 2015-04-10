@@ -2,9 +2,9 @@ require('angular');
 require('angular-route');
 require('angular-sanitize');
 
-var _module = angular.module('Stencil', [
+var _appModule = angular.module('Stencil', [
     'ngRoute',
     'ngSanitize',
 ]);
 
-export = _module;
+export = _appModule;
