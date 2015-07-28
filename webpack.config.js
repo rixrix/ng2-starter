@@ -12,15 +12,11 @@ var options = {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: 'typescript-loader'
+                loader: 'typescript-simple'
             },
             {
                 test: /\.html$/,
                 loader: 'raw'
-            },
-            {
-                test: /\.styl$/,
-                loader: 'style!css?skipRequireAndAddPath=app/!stylus!'
             }
         ]
     },
@@ -35,12 +31,12 @@ var options = {
     wrap: {
         strict: {
             before: [
-                '"use strict";'
+                //'"use strict";'
             ]
         }
     },
     plugins: [
-        new webpack.NormalModuleReplacementPlugin(/^.*\.(html|css|styl)$/, function (request) {
+        new webpack.NormalModuleReplacementPlugin(/^.*\.(html|css)$/, function (request) {
             var relative = path.relative(cwdPath, request.context);
             var splitPath = relative.split(path.sep);
 
@@ -53,15 +49,8 @@ var options = {
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.js'],
         alias: {
-            'angular': 'node_modules/angular/angular.min',
-            'angular-route': 'node_modules/angular-route/angular-route.min',
-            'angular-sanitize': 'node_modules/angular-sanitize/angular-sanitize.min',
-            /**
-             * Entry point for apps directives, services and etc
-             */
-            'app-module': 'app/app-module'
         },
-        modulesDirectories: ['.', 'app', 'web_modules', 'node_modules']
+        modulesDirectories: ['.', 'app', 'node_modules']
     },
     output: {
         path: '/',

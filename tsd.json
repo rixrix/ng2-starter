@@ -5,17 +5,20 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "angularjs/angular.d.ts": {
-      "commit": "72f8dbc007a261561514c2e3f6ba89c232b12dc8"
+    "angular2/angular2.d.ts": {
+      "commit": "73e4b46719dd2e425b4daf850d64cc5b1f753706"
     },
-    "angularjs/angular-route.d.ts": {
-      "commit": "72f8dbc007a261561514c2e3f6ba89c232b12dc8"
+    "rx/rx.d.ts": {
+      "commit": "73e4b46719dd2e425b4daf850d64cc5b1f753706"
     },
-    "jquery/jquery.d.ts": {
-      "commit": "72f8dbc007a261561514c2e3f6ba89c232b12dc8"
+    "rx/rx-lite.d.ts": {
+      "commit": "73e4b46719dd2e425b4daf850d64cc5b1f753706"
     },
-    "angularjs/angular-sanitize.d.ts": {
-      "commit": "48b4cb54af76f02b33dccaa0fdd2ae97db7cdd1b"
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "73e4b46719dd2e425b4daf850d64cc5b1f753706"
+    },
+    "angular2/router.d.ts": {
+      "commit": "f6c8ca47193fb67947944a3170912672ac3e908e"
     }
   }
 }

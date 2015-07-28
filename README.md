@@ -1,4 +1,4 @@
-# Webpack + GulpJS + AngularJS + TypeScript + Stylus
+# Webpack + GulpJS + Angular2 + TypeScript + Others
 
 > fork of [Stencil](https://github.com/rixrix/stencil) project 
 
@@ -10,20 +10,18 @@ A horribly simple boilerplate for frontend development using some good WWW stuff
 
 * [GulpJS](http://gulpjs.com/)
 * [TypeScript](http://www.typescriptlang.org/)
-* [AngularJS](https://angular.io/)
+* [Angular2](https://angular.io/)
 * [Webpack](webpack.github.io/)
 * [NodeJS](https://nodejs.org/)
 * [ExpressJS](http://expressjs.com/)
-* [Stylus](http://learnboost.github.io/stylus/)
 * [DefinitelyTyped](http://definitelytyped.org/tsd/)
-* [Bootstrap Stylus](https://www.npmjs.com/package/bootstrap-styl)
 
 ## Install npm dependencies
 
 Make sure you have NodeJS and Git, then
 
 ```
-$ git clone https://github.com/rixrix/stencil.git
+$ git clone https://github.com/rixrix/stencil-webpack.git
 $ cd </path/to/stencil/cloned/folder>
 $ npm install
 ```

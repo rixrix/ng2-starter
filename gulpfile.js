@@ -63,6 +63,9 @@ gulp.task('webpack-dev-server', function() {
     var options = require('./webpack.config');
 
     options.entry = [];
+    options.entry.push('reflect-metadata/Reflect');
+    options.entry.push('core-js/client/shim.min');
+    options.entry.push('zone.js/lib/zone');
     options.entry.push('app/' + appProjectName + '.ts');
     options.entry.push('webpack-dev-server/client?http://localhost:' + webServerPort, 'webpack/hot/dev-server');
     options.plugins.push(new webpack.HotModuleReplacementPlugin());
@@ -113,7 +116,12 @@ gulp.task('webpackify', function(callback) {
     var outputPath = isPackageRelease ? sources.dist : sources.build;
 
     webpackOptions.entry = {
-        stencil: 'app/' + appProjectName + '.ts'
+        stencil: [
+            'reflect-metadata/Reflect',
+            'core-js/client/shim.min',
+            'zone.js/lib/zone',
+            'app/' + appProjectName + '.ts'
+        ]
     };
 
     webpackOptions.output = {
