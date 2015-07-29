@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Stencil - A horribly simple boilerplate for frontend development</title>
     <base href="/">
+    <!-- quickfix: https://github.com/angular/angular/pull/3214 -->
+    <script>baseElement = document.querySelector('base');baseElement.attr = baseElement.getAttribute;</script>
 </head>
 <body>
     <app></app>
