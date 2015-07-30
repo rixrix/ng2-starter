@@ -1,5 +1,8 @@
 ///<reference path='../typings/tsd.d.ts'/>
 
+/**
+ * Custom types for Webpack
+ */
 declare var require: {
     <T>(path: string): T;
     (paths: string[], callback: (...modules: any[]) => void): void;
