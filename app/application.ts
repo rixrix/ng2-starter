@@ -1,3 +1,4 @@
+
 import {
     Component,
     View
@@ -19,23 +20,7 @@ import {Main} from './main/main';
         RouterLink,
         RouterOutlet
     ],
-    template: `
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a [router-link]="['/home']">Stencil</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <router-outlet></router-outlet>
-    `
+    template: <string>require('./application.html')
 })
 @RouteConfig([
     { path: '/', as: 'home', component: Main }
