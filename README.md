@@ -1,7 +1,5 @@
 # Webpack + GulpJS + Angular2 + TypeScript + Others
 
-> fork of [Stencil](https://github.com/rixrix/stencil) project 
-
 ## Stencil
 
 A horribly simple boilerplate for frontend development using some good WWW stuff today!
@@ -21,7 +19,7 @@ A horribly simple boilerplate for frontend development using some good WWW stuff
 Make sure you have NodeJS and Git, then
 
 ```
-$ git clone https://github.com/rixrix/stencil-webpack.git
+$ git clone https://github.com/rixrix/stencil-webpack-angular2.git
 $ cd </path/to/stencil/cloned/folder>
 $ npm install
 ```
@@ -78,30 +76,21 @@ However, check the following files and folders when you want to add another func
 
 * `app/<your-new-folder-here/>`
 * `app/stencil.ts` - Include your new AngularJS controller, its module name and possibly add the route to your new controller and template.
-* `app/styles/index.styl` - If you want to use `Stylus` for your CSS styling then update this file, otherwise just use a regular CSS file and leave this file as is.
 
 ## Todos
 
-* Check [Todos](https://github.com/rixrix/stencil/issues)
+* Check [Todos](https://github.com/rixrix/stencil-webpack-angular2/issues)
 * probably [MochaJS, ChaiJS and SinonJS](http://blog.codeship.com/mocha-js-chai-sinon-frontend-javascript-code-testing-tutorial/)
 
 ## Need Help ?
 
-File an issue https://github.com/rixrix/stencil/issues
-
-## Want to help ?
-
-Issue a pull request https://github.com/rixrix/stencil/pulls
+File an issue https://github.com/rixrix/stencil-webpack-angular2/issues
 
 ## Resources
 
 * Relational Folder Structure http://w2ui.com/web/blog/10/Folder-Structure-for-Single-Page-Applications
 * Gulp task names https://github.com/mrkev/generator-typescript
 * gulp-starter (awesome resource) https://github.com/greypants/gulp-starter
-
-## Warning
-
-* Not tested on animals BUT only on MacOSX Yosemite
 
 ## License
 
