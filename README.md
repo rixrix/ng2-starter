@@ -68,19 +68,9 @@ For `run`, `watchrun` or `releaserun` tasks, navigate to the following URL:
 http://localhost:3000
 ```
 
-## Development Workflow
-
-This boilerplate comes with a simple and running example found in `app/main` folder. 
-
-However, check the following files and folders when you want to add another functionality.
-
-* `app/<your-new-folder-here/>`
-* `app/stencil.ts` - Include your new AngularJS controller, its module name and possibly add the route to your new controller and template.
-
 ## Todos
 
 * Check [Todos](https://github.com/rixrix/stencil-webpack-angular2/issues)
-* probably [MochaJS, ChaiJS and SinonJS](http://blog.codeship.com/mocha-js-chai-sinon-frontend-javascript-code-testing-tutorial/)
 
 ## Need Help ?
 
