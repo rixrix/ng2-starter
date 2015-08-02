@@ -2,7 +2,7 @@
 
 ## Stencil
 
-A horribly simple boilerplate for frontend development using some good WWW stuff today!
+A simple boilerplate for Angular2, try http://rixrix.github.io/stencil-webpack-angular2
 
 ## Technologies
 
@@ -71,16 +71,6 @@ http://localhost:3000
 ## Todos
 
 * Check [Todos](https://github.com/rixrix/stencil-webpack-angular2/issues)
-
-## Need Help ?
-
-File an issue https://github.com/rixrix/stencil-webpack-angular2/issues
-
-## Resources
-
-* Relational Folder Structure http://w2ui.com/web/blog/10/Folder-Structure-for-Single-Page-Applications
-* Gulp task names https://github.com/mrkev/generator-typescript
-* gulp-starter (awesome resource) https://github.com/greypants/gulp-starter
 
 ## License
 
