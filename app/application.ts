@@ -11,6 +11,7 @@ import {
 } from 'angular2/router';
 
 import {Main} from './main/main';
+import {ShadowDOM} from  './dom/shadow_dom';
 
 @Component({
     selector: 'app'
@@ -22,8 +23,10 @@ import {Main} from './main/main';
     ],
     template: <string>require('./application.html')
 })
+
 @RouteConfig([
-    { path: '/', as: 'home', component: Main }
+    { path: '/', as: 'home', component: Main },
+    { path: '/shadow-dom', as: 'shadow-dom', component: ShadowDOM }
 ])
 
 export class AppEntryPoint {

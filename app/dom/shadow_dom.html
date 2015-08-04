@@ -1,0 +1,46 @@
+<div class="mdl-grid stencil-content">
+    <div class="stencil-cards mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--4-col">
+        <div class="stencil-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+                <h3>Toggle Shadow DOM Components</h3>
+                <ul>
+                    <li>
+                        <label class="mdl-radio" for="option-1">
+                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked (click)="toggleComponentDisplay('none')" />
+                            <span class="mdl-radio__label">No Shadow DOM</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" (click)="toggleComponentDisplay('emulated')"/>
+                            <span class="mdl-radio__label">Emulated</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="mdl-radio" for="option-3">
+                            <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" (click)="toggleComponentDisplay('native')"/>
+                            <span class="mdl-radio__label">Native</span>
+                        </label>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="stencil-cards mdl-cell mdl-cell--8-col mdl-cell--12-col-tablet mdl-grid mdl-grid--no-spacing">
+
+        <shadow-dom-disabled *ng-if="isShowDisabledShadowDom === true"></shadow-dom-disabled>
+
+        <div class="stencil-separator mdl-cell--1-col"></div>
+
+        <shadow-dom-enabled *ng-if="isShowEmulatedShadowDom === true"></shadow-dom-enabled>
+        <div class="stencil-separator mdl-cell--1-col"></div>
+
+        <div class="stencil-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" *ng-if="isShowNativeShadowDom === true">
+            <shadow-dom-enabled-native></shadow-dom-enabled-native>
+        </div>
+    </div>
+
+</div>
