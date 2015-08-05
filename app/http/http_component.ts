@@ -35,9 +35,7 @@ export class HttpComponent {
     searchResults: string[];
     totalSearchResults: number = 0;
     
-    constructor(private http: Http) {
-        console.log(JSON.stringify(this.http));
-    }
+    constructor(private http: Http) {}
     
     queryGithubIssues(selectedType: string): void {
         let issueType = GithubIssue[selectedType];
@@ -48,8 +46,6 @@ export class HttpComponent {
         .subscribe((issues) => {
             this.searchResults = issues;
             this.totalSearchResults = issues.length;
-            
-            console.log(issues);
         })
     }
     
