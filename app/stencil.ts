@@ -4,9 +4,11 @@ require('./styles/index.css');
 
 import {bootstrap} from 'angular2/angular2';
 import {routerInjectables} from 'angular2/router';
+import {httpInjectables} from 'angular2/http';
 
 import {AppEntryPoint} from './application'
 
 bootstrap(AppEntryPoint, [
-    routerInjectables
+    routerInjectables,
+    httpInjectables
 ]);

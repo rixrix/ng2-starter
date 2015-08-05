@@ -12,6 +12,7 @@ import {
 
 import {Main} from './main/main';
 import {ShadowDOM} from  './dom/shadow_dom';
+import {HttpComponent} from './http/http_component';
 
 @Component({
     selector: 'app'
@@ -26,7 +27,8 @@ import {ShadowDOM} from  './dom/shadow_dom';
 
 @RouteConfig([
     { path: '/', as: 'home', component: Main },
-    { path: '/shadow-dom', as: 'shadow-dom', component: ShadowDOM }
+    { path: '/shadow-dom', as: 'shadow-dom', component: ShadowDOM },
+    { path: '/http', as: 'http', component: HttpComponent}
 ])
 
 export class AppEntryPoint {
