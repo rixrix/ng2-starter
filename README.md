@@ -4,6 +4,17 @@
 
 A simple boilerplate for Angular2, try http://rixrix.github.io/stencil-webpack-angular2
 
+## Features
+
+This is a work progress...
+
+* Basic routing
+* Component
+* Shadow DOM component
+* Material Design Lite (CSS)
+* Various usage of bindings, event handling, Webpack loader for HTML, CSS, Stylus or SCSS files, etc
+* More to come
+
 ## Technologies
 
 * [GulpJS](http://gulpjs.com/)
