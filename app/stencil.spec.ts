@@ -1,5 +1,5 @@
 describe('Stencil', () => {
     it('check that Karma test runner is ok', () => {
-        expect(true).toBe(false);
+        expect(true).toBe(true);
     });
 });
