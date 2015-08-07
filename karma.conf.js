@@ -2,7 +2,7 @@
 // Generated on Fri Aug 07 2015 16:40:44 GMT+1200 (NZST)
 
 module.exports = function(config) {
-  config.set({
+  var configuration = {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -85,6 +85,21 @@ module.exports = function(config) {
       },
       stats: { colors: true, reasons: true },
       debug: false
+    },
+
+    // custom launcher for Chrome on TravisCI
+    // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
+    customLaunchers: {
+      chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     }
-  })
-}
+  };
+
+  if (process.env.TRAVIS) {
+    configuration.browsers = ['chrome_travis_ci'];
+  }
+
+  config.set(configuration);
+};
