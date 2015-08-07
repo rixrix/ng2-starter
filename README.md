@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rixrix/stencil-webpack-angular2.svg)](https://travis-ci.org/rixrix/stencil-webpack-angular2)
+
 # Webpack + GulpJS + Angular2 + TypeScript + Others
 
 ## Stencil
