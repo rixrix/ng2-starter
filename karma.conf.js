@@ -57,7 +57,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: [],
 
 
     // Continuous Integration mode
@@ -87,12 +87,16 @@ module.exports = function(config) {
       debug: false
     },
 
-    // custom launcher for Chrome on TravisCI
-    // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
     customLaunchers: {
+      // custom launcher for Chrome on TravisCI
+      // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
       chrome_travis_ci: {
         base: 'Chrome',
-        flags: ['--no-sandbox']
+        flags: ['--no-sandbox', '--no-first-run']
+      },
+      chrome_desktop: {
+        base: 'Chrome',
+        flags: ['--no-first-run']
       }
     }
   };
@@ -100,6 +104,9 @@ module.exports = function(config) {
   if (process.env.TRAVIS) {
     configuration.browsers = ['chrome_travis_ci'];
     configuration.singleRun = true;
+    configuration.autoWatch = false;
+  } else {
+    configuration.browsers = ['chrome_desktop'];
   }
 
   config.set(configuration);

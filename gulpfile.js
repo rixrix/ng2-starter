@@ -33,7 +33,7 @@ var sources = {
 };
 
 /***********************************************************************************************************************
- * Local functions / Utilities
+ * Private Utilities
  **********************************************************************************************************************/
 
 gulp.task('clean', function() {
@@ -90,6 +90,13 @@ gulp.task('webpack-dev-server', function() {
 
     webpackServer.listen(webServerPort, function () {
         util.log("webpack @ http://localhost:" + webServerPort)
+    });
+});
+
+gulp.task('karma-server', function() {
+    karma.server.start({
+        configFile: __dirname + '/karma.conf.js',
+        reporters: 'dots'
     });
 });
 
@@ -191,16 +198,14 @@ gulp.task('releaserun', function() {
 gulp.task('runtest', function(doneCB) {
     var cmd = 'node node_modules/.bin/karma run karma.conf.js';
 
-    karma.server.start({
-        configFile: __dirname + '/karma.conf.js',
-        reporters: 'dots'
+    runSequence('karma-server', function() {
+        exec(cmd, function(error, stdout) {
+            console.log(error);
+            console.log(stdout);
+            doneCB();
+        });
     });
 
-    exec(cmd, function(error, stdout) {
-        console.log(error);
-        console.log(stdout);
-        doneCB();
-    });
 });
 
 gulp.task('default', ['watchrun']);
