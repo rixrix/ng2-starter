@@ -1,13 +1,10 @@
 import {
     Component,
     View,
-    Http
-} from 'angular2/angular2';
-
-import {
+    Http,
     NgFor,
     NgIf
-} from 'angular2/directives'
+} from 'angular2/angular2';
 
 enum GithubIssue {
     all,
