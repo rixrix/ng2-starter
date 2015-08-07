@@ -1,9 +1,7 @@
 language: node_js
 node_js:
-  - npm install
   - '0.12'
   - 'iosjs'
-
 branches:
   only:
     - 'master'
