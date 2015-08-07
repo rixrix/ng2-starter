@@ -9,6 +9,8 @@ var util = require('gulp-util');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var _ = require('lodash');
+var exec = require('child_process').exec;
+var karma = require('karma');
 
 var appIndexHtmlFilename = 'index.html';
 var appProjectName = 'stencil';
@@ -137,7 +139,7 @@ gulp.task('webpackify', function(callback) {
 });
 
 /***********************************************************************************************************************
- * Common Tasks
+ * Public Tasks
  **********************************************************************************************************************/
 
 gulp.task('build', function() {
@@ -184,6 +186,21 @@ gulp.task('releaserun', function() {
         'release',
         'run'
     );
+});
+
+gulp.task('runtest', function(doneCB) {
+    var cmd = 'node node_modules/.bin/karma run karma.conf.js';
+
+    karma.server.start({
+        configFile: __dirname + '/karma.conf.js',
+        reporters: 'dots'
+    });
+
+    exec(cmd, function(error, stdout) {
+        console.log(error);
+        console.log(stdout);
+        doneCB();
+    });
 });
 
 gulp.task('default', ['watchrun']);
