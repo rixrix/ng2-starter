@@ -93,13 +93,6 @@ gulp.task('webpack-dev-server', function() {
     });
 });
 
-gulp.task('karma-server', function() {
-    karma.server.start({
-        configFile: __dirname + '/karma.conf.js',
-        reporters: 'dots'
-    });
-});
-
 /***********************************************************************************************************************
  * Copy-ish Tasks
  **********************************************************************************************************************/
@@ -196,16 +189,11 @@ gulp.task('releaserun', function() {
 });
 
 gulp.task('runtest', function(doneCB) {
-    var cmd = 'node node_modules/.bin/karma run karma.conf.js';
+    var server = new karma.Server({
+        configFile: __dirname + '/karma.conf.js'
+    }, doneCB);
 
-    runSequence('karma-server', function() {
-        exec(cmd, function(error, stdout) {
-            console.log(error);
-            console.log(stdout);
-            doneCB();
-        });
-    });
-
+    server.start();
 });
 
 gulp.task('default', ['watchrun']);
