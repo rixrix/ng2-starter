@@ -1,0 +1,1 @@
+export const TOOL_TIP: string = "TOOL_TIP";

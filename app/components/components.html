@@ -1,0 +1,35 @@
+<div class="mdl-grid stencil-content">
+    <div class="stencil-cards mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--4-col">
+        <div class="stencil-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+                <h3>Directive Examples</h3>
+                <ul>
+                    <li>
+                        <label class="mdl-radio" for="option-1">
+                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="{{directiveTypes.TOOL_TIP}}"
+                                (click)="onListItemClick(directiveTypes.TOOL_TIP)"/>
+                            <span class="mdl-radio__label">Tooltip</span>
+                        </label>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="stencil-cards mdl-cell mdl-cell--8-col mdl-cell--12-col-tablet mdl-grid mdl-grid--no-spacing"
+         *ng-if="selectedItem === directiveTypes.TOOL_TIP" tooltip>
+        <div class="stencil-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+                <h2 class="mdl-card__title-text">Tooltip</h2>
+            </div>
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Hover anywhere in the box to see the tooltip
+            </div>
+
+        </div>
+    </div>
+
+</div>
