@@ -10,21 +10,21 @@ import {
 
 import {
     ToolTip
-} from './tooltip';
+} from './tooltip_directive';
 
 @Component({
-    selector: 'components'
+    selector: 'main-component-cmp'
 })
 
 @View({
-    template: <string>require('./components.html'),
+    template: <string>require('./main_component.html'),
     directives: [
         NgIf,
         ToolTip
     ]
 })
 
-export class Components {
+export class MainComponent {
     directiveTypes = {
         TOOL_TIP
     };

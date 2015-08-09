@@ -14,7 +14,7 @@ import {ShadowDOMEnabledNative} from './shadow_dom_enabled_native';
 })
 
 @View({
-    template: <string>require('./shadow_dom.html'),
+    template: <string>require('./main_shadowdom.html'),
     directives: [
         NgIf,
         ShadowDOMEnabled,
@@ -23,7 +23,7 @@ import {ShadowDOMEnabledNative} from './shadow_dom_enabled_native';
     ]
 })
 
-export class ShadowDOM {
+export class MainShadowDOM {
     title: string;
 
     private isShowDisabledShadowDom: boolean = true;

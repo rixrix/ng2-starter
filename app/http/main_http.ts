@@ -6,36 +6,42 @@ import {
     NgIf
 } from 'angular2/angular2';
 
-enum GithubIssue {
-    all,
-    open,
-    closed    
-}
+import {
+    ALL,
+    OPEN,
+    CLOSED
+} from './constants';
 
 @Component({
     selector: 'http-cmp'
 })
 
 @View({
-    template: <string>require('./http_component.html'),
+    template: <string>require('./main_http.html'),
     directives: [
         NgFor,
         NgIf
     ]
 })
 
-export class HttpComponent {
+export class MainHttp {
     private gitHubRepo: string = "https://api.github.com/repos/rixrix/stencil-webpack-angular2/issues?state=";
-    
+
+    private issueState = {
+        ALL,
+        OPEN,
+        CLOSED
+    };
+
     searchResults: string[];
+
     totalSearchResults: number = 0;
     
     constructor(private http: Http) {}
     
     queryGithubIssues(selectedType: string): void {
-        let issueType = GithubIssue[selectedType];
-        
-        this.http.get(this.gitHubRepo + issueType)
+
+        this.http.get(this.gitHubRepo + selectedType)
         .toRx()
         .map(result => result.json())
         .subscribe((issues) => {

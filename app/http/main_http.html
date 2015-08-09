@@ -6,19 +6,19 @@
                 <ul>
                     <li>
                         <label class="mdl-radio" for="option-1">
-                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" (click)="queryGithubIssues(issueType.all)" />
+                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" (click)="queryGithubIssues(issueState.ALL)" />
                             <span class="mdl-radio__label">All Issues</span>
                         </label>
                     </li>
                     <li>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" (click)="queryGithubIssues(issueType.open)"/>
+                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" (click)="queryGithubIssues(issueState.OPEN)"/>
                             <span class="mdl-radio__label">Open Issues</span>
                         </label>
                     </li>
                     <li>
                         <label class="mdl-radio" for="option-3">
-                            <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" (click)="queryGithubIssues(issueType.closed)"/>
+                            <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" (click)="queryGithubIssues(issueState.CLOSED)"/>
                             <span class="mdl-radio__label">Closed Issues</span>
                         </label>
                     </li>

@@ -11,9 +11,9 @@ import {
 } from 'angular2/router';
 
 import {Main} from 'main/main';
-import {ShadowDOM} from  'dom/shadow_dom';
-import {HttpComponent} from 'http/http_component';
-import {Components} from 'components/components';
+import {MainShadowDOM} from  'dom/main_shadowdom';
+import {MainHttp} from 'http/main_http';
+import {MainComponent} from 'components/main_component';
 
 @Component({
     selector: 'app'
@@ -28,9 +28,9 @@ import {Components} from 'components/components';
 
 @RouteConfig([
     { path: '/', as: 'home', component: Main },
-    { path: '/shadow-dom', as: 'shadow-dom', component: ShadowDOM },
-    { path: '/http', as: 'http', component: HttpComponent},
-    { path: '/component', as: 'component', component: Components}
+    { path: '/shadow-dom', as: 'shadow-dom', component: MainShadowDOM },
+    { path: '/http', as: 'http', component: MainHttp},
+    { path: '/component', as: 'component', component: MainComponent}
 ])
 
 export class AppEntryPoint {
