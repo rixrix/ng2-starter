@@ -25,8 +25,6 @@ enum GithubIssue {
 })
 
 export class HttpComponent {
-    private seletedIssueType: string;
-    private issueType = GithubIssue;    
     private gitHubRepo: string = "https://api.github.com/repos/rixrix/stencil-webpack-angular2/issues?state=";
     
     searchResults: string[];
