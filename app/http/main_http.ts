@@ -3,7 +3,9 @@ import {
     View,
     Http,
     NgFor,
-    NgIf
+    NgIf,
+    httpInjectables,
+    Inject
 } from 'angular2/angular2';
 
 import {
@@ -13,7 +15,8 @@ import {
 } from './constants';
 
 @Component({
-    selector: 'http-cmp'
+    selector: 'http-cmp',
+    viewInjector: [httpInjectables]
 })
 
 @View({
@@ -36,8 +39,12 @@ export class MainHttp {
     searchResults: string[];
 
     totalSearchResults: number = 0;
-    
-    constructor(private http: Http) {}
+
+    http: Http;
+
+    constructor(@Inject(Http) http: Http) {
+        this.http = http;
+    }
     
     queryGithubIssues(selectedType: string): void {
 
