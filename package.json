@@ -8,7 +8,7 @@
     "test": "gulp runtest"
   },
   "author": "Richard Sentino",
-  "license": "Apache",
+  "license": "MIT",
   "dependencies": {
     "angular2": "^2.0.0-alpha.34",
     "core-js": "^1.0.0",
@@ -39,11 +39,9 @@
     "run-sequence": "^1.1.2",
     "sass-loader": "^1.0.4",
     "style-loader": "^0.12.3",
-    "tiny-lr": "^0.1.6",
     "tsd": "^0.6.3",
     "typescript": "^1.5.3",
     "typescript-simple-loader": "^0.3.3",
-    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1"
   }
