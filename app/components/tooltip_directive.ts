@@ -1,9 +1,13 @@
+require('./basic_tooltip_popup.css');
+
 import {
     Directive,
     ElementRef
 } from 'angular2/angular2';
 
-import {DOM} from 'angular2/src/dom/dom_adapter';
+import {
+    DOM
+} from 'angular2/src/dom/dom_adapter';
 
 @Directive({
     selector: '[tooltip]',
@@ -15,21 +19,17 @@ import {DOM} from 'angular2/src/dom/dom_adapter';
 
 export class ToolTip {
 
-    modifiedTitle: string = '';
+    tooltipElement = DOM.createElement('basic-tooltip-popup');
 
     constructor(element: ElementRef) {
-        DOM.appendChild(document.body, DOM.createElement('tooltip-popup'));
-    }
-
-    set title(value: string) {
-        this.modifiedTitle = value.toUpperCase() + ' !';
     }
 
     onMouseEnter($event) {
-        console.log('onMouseEnter ', $event);
+        this.tooltipElement.innerHTML = require('./basic_tooltip_popup.html');
+        DOM.appendChild(document.body, this.tooltipElement);
     }
 
     onMouseLeave($event) {
-        console.log('onMouseLeave', $event);
+        DOM.removeChild(document.body, this.tooltipElement);
     }
 }
