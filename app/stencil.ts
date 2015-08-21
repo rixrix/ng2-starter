@@ -9,7 +9,7 @@ import {
 } from 'angular2/angular2';
 
 import {
-    routerInjectables,
+    ROUTER_BINDINGS,
     LocationStrategy,
     HashLocationStrategy
 } from 'angular2/router';
@@ -17,6 +17,6 @@ import {
 import {AppEntryPoint} from './application'
 
 bootstrap(AppEntryPoint, [
-    routerInjectables,
+    ROUTER_BINDINGS,
     bind(LocationStrategy).toClass(HashLocationStrategy)
 ]);
