@@ -30,9 +30,9 @@ import {MainEvents} from 'events/main_events';
 @RouteConfig([
     { path: '/', as: 'home', component: Main },
     { path: '/shadow-dom', as: 'shadow-dom', component: MainShadowDOM },
-    { path: '/http', as: 'http', component: MainHttp},
-    { path: '/component', as: 'component', component: MainComponent},
-    { path: '/events', as: 'events', component: MainEvents}
+    { path: '/http', as: 'http', component: MainHttp },
+    { path: '/component', as: 'component', component: MainComponent },
+    { path: '/events', as: 'events', component: MainEvents }
 ])
 
 export class AppEntryPoint {
