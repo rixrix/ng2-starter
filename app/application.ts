@@ -14,6 +14,7 @@ import {Main} from 'main/main';
 import {MainShadowDOM} from  'dom/main_shadowdom';
 import {MainHttp} from 'http/main_http';
 import {MainComponent} from 'components/main_component';
+import {MainEvents} from 'events/main_events';
 
 @Component({
     selector: 'app'
@@ -30,7 +31,8 @@ import {MainComponent} from 'components/main_component';
     { path: '/', as: 'home', component: Main },
     { path: '/shadow-dom', as: 'shadow-dom', component: MainShadowDOM },
     { path: '/http', as: 'http', component: MainHttp},
-    { path: '/component', as: 'component', component: MainComponent}
+    { path: '/component', as: 'component', component: MainComponent},
+    { path: '/events', as: 'events', component: MainEvents}
 ])
 
 export class AppEntryPoint {
