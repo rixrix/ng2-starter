@@ -4,7 +4,8 @@ import {
     Http,
     NgFor,
     NgIf,
-    httpInjectables
+    httpInjectables,
+    Inject
 } from 'angular2/angular2';
 
 import {
@@ -39,7 +40,11 @@ export class MainHttp {
 
     totalSearchResults: number = 0;
 
-    constructor(private http: Http) {}
+    http: Http;
+
+    constructor(@Inject(Http) http: Http) {
+        this.http = http;
+    }
     
     queryGithubIssues(selectedType: string): void {
 
