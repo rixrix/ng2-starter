@@ -6,22 +6,22 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angular2/angular2.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     },
     "rx/rx.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     },
     "rx/rx-lite.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     },
     "es6-promise/es6-promise.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     },
     "angular2/router.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     }
   }
 }
