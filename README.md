@@ -82,10 +82,6 @@ For `run`, `watchrun` or `releaserun` tasks, navigate to the following URL:
 http://localhost:3000
 ```
 
-## Todos
-
-* Check [Todos](https://github.com/rixrix/stencil-webpack-angular2/issues)
-
 ## License
 
 Distributed under [MIT License](http://opensource.org/licenses/MIT)
