@@ -1,3 +1,5 @@
+> project moved to https://github.com/stencilicious/ng2-starter
+
 [![Build Status](https://travis-ci.org/rixrix/stencil-webpack-angular2.svg)](https://travis-ci.org/rixrix/stencil-webpack-angular2) [![Issue Stats](http://issuestats.com/github/rixrix/stencil-webpack-angular2/badge/issue)](http://issuestats.com/github/rixrix/stencil-webpack-angular2) 
 [![Issue Stats](http://issuestats.com/github/rixrix/stencil-webpack-angular2/badge/pr)](http://issuestats.com/github/rixrix/stencil-webpack-angular2)
 
