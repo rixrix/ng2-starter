@@ -13,8 +13,5 @@
     "listFiles": true
   },
   "files": [
-    "app/application.ts",
-    "app/stencil.ts",
-    "app/libs.d.ts"
   ]
 }

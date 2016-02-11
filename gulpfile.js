@@ -127,9 +127,9 @@ gulp.task('webpackify', function(callback) {
 
     webpackOptions.entry = {
         stencil: [
-            'reflect-metadata/Reflect',
             'core-js/client/shim.min',
-            'zone.js/lib/zone',
+            'zone.js/dist/zone.min',
+            'reflect-metadata/Reflect.js',
             'app/' + appProjectName + '.ts'
         ]
     };

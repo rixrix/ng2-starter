@@ -2,11 +2,14 @@ import {
     Component,
     View,
     Http,
-    NgFor,
-    NgIf,
     httpInjectables,
     Inject
-} from 'angular2/angular2';
+} from 'angular2/core';
+
+import {
+    NgFor,
+    NgIf,
+} from 'angular2/common';
 
 import {
     ALL,

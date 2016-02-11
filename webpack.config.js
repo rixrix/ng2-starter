@@ -12,7 +12,7 @@ var options = {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: 'typescript-simple'
+                loader: 'ts-loader'
             },
             {
                 test: /\.html$/,
@@ -39,7 +39,7 @@ var options = {
     wrap: {
         strict: {
             before: [
-                //'"use strict";'
+                '"use strict";'
             ]
         }
     },

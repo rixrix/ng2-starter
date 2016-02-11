@@ -2,8 +2,11 @@
 import {
     Component,
     View,
+
+} from 'angular2/core';
+import {
     NgIf
-} from 'angular2/angular2';
+} from 'angular2/common';
 
 import {ShadowDOMEnabled} from './shadow_dom_enabled';
 import {ShadowDOMDisabled} from './shadow_dom_disabled';

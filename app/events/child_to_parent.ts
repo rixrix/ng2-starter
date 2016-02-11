@@ -2,7 +2,7 @@ import {
     Component,
     View,
     EventEmitter
-} from 'angular2/angular2';
+} from 'angular2/core';
 
 @Component({
     selector: 'child-to-parent',

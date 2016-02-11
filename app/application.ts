@@ -2,7 +2,7 @@
 import {
     Component,
     View
-} from 'angular2/angular2';
+} from 'angular2/core';
 
 import {
     RouteConfig,

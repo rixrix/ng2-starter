@@ -3,7 +3,7 @@ import {
     Component,
     View,
     ViewEncapsulation
-} from 'angular2/angular2';
+} from 'angular2/core';
 
 @Component({
     selector: 'shadow-dom-enabled'

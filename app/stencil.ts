@@ -3,20 +3,26 @@
 require('./assets/css/material.css');
 require('./styles/index.css');
 
+import {bootstrap} from 'angular2/platform/browser';
 import {
-    bootstrap,
-    bind
-} from 'angular2/angular2';
+    provide,
+    enableProdMode
+} from 'angular2/core';
 
 import {
-    ROUTER_BINDINGS,
+    ROUTER_PROVIDERS,
     LocationStrategy,
-    HashLocationStrategy
+    PathLocationStrategy,
+    ROUTER_DIRECTIVES,
+    RouteConfig,
+    Router,
+    APP_BASE_HREF
 } from 'angular2/router';
 
 import {AppEntryPoint} from './application'
 
 bootstrap(AppEntryPoint, [
-    ROUTER_BINDINGS,
-    bind(LocationStrategy).toClass(HashLocationStrategy)
+    ROUTER_PROVIDERS,
+    provide(LocationStrategy, {useClass: PathLocationStrategy}),
+    provide(APP_BASE_HREF, {useValue: '/stencil'})
 ]);
